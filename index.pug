@@ -4,10 +4,31 @@ html(lang="en")
 	body
 		include modules/header
 		mixin name(name)
-			li=name
+			li(class= 'test '+name)=name
 		ul 
-			+name('name1')
-			+name('name2')
-			+name('name3')
+			+name('name 1')
+			+name('name 2')
+			+name('name 3')
+
+		mixin news(title)
+			.news-wrap(style="border: 1px solid #cccccc; margin: 0 0 30px; padding: 20px;")
+				span.news-title= title
+				.news-text
+					if block
+						block
+					else
+						p Пуста новина
+
+		+news('Новина без тексту')
+		+news('Новина з текстом')
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem dolor, doloremque sequi magni pariatur, repudiandae officia culpa quisquam rerum.
+
+		mixin link(href, name)
+			a(href= href)= name
+
+		+link('google.com', 'Гугл')
+		+link('yahoo.com', 'Yahoo!')
+		+link('amazone.com', 'Amazone')
+
 
 
