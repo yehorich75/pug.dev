@@ -3,3 +3,11 @@ html(lang="en")
 	head
 	body
 		include modules/header
+		mixin name(name)
+			li=name
+		ul 
+			+name('name1')
+			+name('name2')
+			+name('name3')
+
+
