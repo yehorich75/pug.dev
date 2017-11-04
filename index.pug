@@ -27,8 +27,17 @@ html(lang="en")
 			a(href= href)= name
 
 		+link('google.com', 'Гугл')
+		br
 		+link('yahoo.com', 'Yahoo!')
+		br
 		+link('amazone.com', 'Amazone')
+		br
+
+		mixin list(...items)
+			ul
+				each item in items
+					li= item
+		+list(1,2,3,4,5)
 
 
 

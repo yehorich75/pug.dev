@@ -1,0 +1,17 @@
+mixin food-menu(title)
+	.row.food-menu-item
+		.col-lg-5.col-sm-6.col-xs-12
+			img(src="img/menu/business-lunch-1.jpg" alt="Бізнес-ланч").img-responsive.img-center.menu-img/
+		.col-lg-7.col-sm-6.col-xs-12
+			.menu-box.text-left
+		span.menu-title= title
+			h3
+				if block
+					block
+				else
+					p Пуста новина
+
++food-menu('Бізнес-ланч')
+	p Приємно низька ціна, неповторний аромат та домашній смак приготованих справ, різноманітне меню прийдеться Вам до душі. 
++food-menu('Фірмові страви')
+	p Приємно низька ціна, неповторний аромат та домашній смак приготованих справ, різноманітне меню прийдеться Вам до душі. 
