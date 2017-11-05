@@ -1,17 +1,27 @@
+mixin food-menu-img(src, alt)
+	img(src= src, alt= alt).img-responsive.img-center.menu-img/
+mixin food-menu-link(href, name)
+	a(href= href).btn.btn-secondary.text-bold.text-uppercase.animation= name
 mixin food-menu(title)
 	.row.food-menu-item
 		.col-lg-5.col-sm-6.col-xs-12
-			img(src="img/menu/business-lunch-1.jpg" alt="Бізнес-ланч").img-responsive.img-center.menu-img/
+			+food-menu-img("img/menu/business-lunch-1.jpg", "Бізнес-ланч")
 		.col-lg-7.col-sm-6.col-xs-12
 			.menu-box.text-left
-		span.menu-title= title
-			h3
-				if block
-					block
-				else
-					p Пуста новина
+				h3= title
+					if block
+						block
+					else
+						p Пуста новина
+			
+
+
 
 +food-menu('Бізнес-ланч')
-	p Приємно низька ціна, неповторний аромат та домашній смак приготованих справ, різноманітне меню прийдеться Вам до душі. 
+	h3= title
+	p Приємно низька ціна, неповторний аромат та домашній смак приготованих справ, різноманітне меню прийдеться Вам до душі.
++food-menu-link("menu-pages/lunch.html", "Докладніше") 
 +food-menu('Фірмові страви')
-	p Приємно низька ціна, неповторний аромат та домашній смак приготованих справ, різноманітне меню прийдеться Вам до душі. 
+	h3= title
+	p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat asperiores natus eos labore quas tenetur!
++food-menu-link("menu-pages/specialty.html", "Докладніше") 
